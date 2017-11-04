@@ -14,6 +14,7 @@ const ProfileStoryView = () => (
   </div>
 );
 
+// tile is an array of <ProfileStoryView/>s
 const PageShell = ({ tiles }) => (
   // <head>
   // <meta charset="utf-8">
@@ -157,112 +158,10 @@ const PageShell = ({ tiles }) => (
             User Profile Page
           </h2>
           <div class="row animate-box" data-animate-effect="fadeInLeft">
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_1.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Game of Thrones S8</h3>
-                <p>Decide the fate of Westeros!</p>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_2.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Chill/Jazz Fusion 1</h3>
-                <p>Adventure in this new music world! </p>
-              </a>
-            </div>
-            <div class="clearfix visible-sm-block" />
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_3.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Work Title Here</h3>
-                <p>Branding, Web</p>
-              </a>
-            </div>
-            <div class="clearfix visible-md-block" />
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_4.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Work Title Here</h3>
-                <p>Logo, Branding, Web</p>
-              </a>
-            </div>
-            <div class="clearfix visible-sm-block" />
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_5.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Work Title Here</h3>
-                <p>Web, Packaging, Branding</p>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_6.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Work Title Here</h3>
-                <p>Branding</p>
-              </a>
-            </div>
-            <div class="clearfix visible-md-block visible-sm-block" />
-
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_7.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Work Title Here</h3>
-                <p>Web, Illustration</p>
-              </a>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_8.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Work Title Here</h3>
-                <p>Branding, Web</p>
-              </a>
-            </div>
-            <div class="clearfix visible-sm-block" />
-            <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-              <a href="work.html">
-                <img
-                  src="images/work_1.jpg"
-                  alt="Free HTML5 Website Template by FreeHTML5.co"
-                  class="img-responsive"
-                />
-                <h3 class="fh5co-work-title">Work Title Here</h3>
-                <p>Illustration, Branding</p>
-              </a>
-            </div>
-            <div class="clearfix visible-md-block" />
+            {tiles.map(tile => [
+              tile,
+              <div class="clearfix visible-sm-block" />,
+            ])}
           </div>
         </div>
 
