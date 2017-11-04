@@ -60,6 +60,18 @@ app.get('/profile', function(req, res){
 	})
 });
 
+// API PROFILE PAGE
+app.get('/api/profile', function(req, res) {
+  Story.find({}, function(err, stories) {
+    if (err) {
+      console.log('ERRORerr');
+      res.redirect('/');
+    } else {
+      res.json({ stories });
+    }
+  });
+});
+
 // STORY PAGE
 app.get('/story/:id', function(req, res){
 	res.render('story');
