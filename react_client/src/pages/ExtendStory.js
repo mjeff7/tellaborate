@@ -1,6 +1,7 @@
 import React from 'react';
+import { fetchStory } from '../serverApi';
 
-const ExtendStoryShell = ({ id }) => (
+const ExtendStoryShell = ({ title = 'Pick a nice title to see it here' }) => (
   <div>
     <div id="fh5co-page">
       <link
@@ -110,7 +111,7 @@ const ExtendStoryShell = ({ id }) => (
               class="col-md-8 col-md-offset-2 animate-box"
               data-animate-effect="fadeInLeft"
             >
-              <h1>Game of Thrones Season 8</h1>
+              <h1>{title}</h1>
               <h3>Where we start:</h3>
               <p>
                 Briefly introduce the start point/latest update of this story:{' '}
@@ -266,4 +267,5 @@ const ExtendStoryShell = ({ id }) => (
   </div>
 );
 
-export default ({ match }) => <ExtendStoryShell id={match.params.id} />;
+const ExtendStoryShellById = ({ id }) => <ExtendStoryShell />;
+export default ({ match }) => <ExtendStoryShellById id={match.params.id} />;
