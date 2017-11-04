@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const extendStoryUrlFor = previousId =>
+  `/extend/${typeof previousId === 'undefined' ? 'root' : previousId}`;
+
 const ProfileStoryView = ({
-  linkUrl = '',
+  prevContent,
   title = 'Title goes here',
   content = '',
 }) => (
   <div className="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-    <Link to={linkUrl}>
+    <Link to={extendStoryUrlFor(prevContent)}>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/6/64/Demarco%2C_Joseph_-_Manuscript_page.jpg"
         alt={`Story called ${title}`}
