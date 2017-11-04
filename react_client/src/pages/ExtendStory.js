@@ -29,8 +29,8 @@ const ExtendStoryShell = ({ id }) => (
         <h1 id="fh5co-logo">
           <a href="index.html">
             <img
-              src="images/logo.png"
-              alt="Free HTML5 Bootstrap Website Template"
+              src="http://www.publicdomainpictures.net/pictures/60000/velka/old-scroll-1379880723dZK.jpg"
+              alt="Write your story here"
             />
           </a>
         </h1>
@@ -99,7 +99,7 @@ const ExtendStoryShell = ({ id }) => (
             <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
               <figure class="text-center">
                 <img
-                  src="images/GoT_S8.jpg"
+                  src="http://www.publicdomainpictures.net/pictures/60000/velka/old-scroll-1379880723dZK.jpg"
                   alt="Free HTML5 Bootstrap"
                   class="img-responsive"
                 />
