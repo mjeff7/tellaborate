@@ -47,18 +47,17 @@ app.post('/', function(req, res){
 
 // PROFILE PAGE
 app.get('/profile', function(req, res){
-	Story.find({}, function(err, story){
-		// console.log(story)
+	Story.find({}, function(err, stories){
+		// console.log(stories)
 		if(err){
 			console.log("ERRORerr");
 			res.redirect('/')
 		} else {
-			console.log("story found");
-			// console.log(story[0])
-			res.render('profile', {story, story[0]});
+			console.log("stories found");
+			// console.log(stories[0])
+			res.render('profile', {stories});
 		}
 	})
-	// res.render('profile');
 });
 
 // STORY PAGE
