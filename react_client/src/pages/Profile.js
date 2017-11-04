@@ -201,4 +201,8 @@ const PageShell = ({ tiles }) => (
   </div>
 );
 
-export default () => <PageShell tiles={[]} />;
+class SmartProfile extends React.Component {
+  render = () => <PageShell tiles={stories.map(ProfileStoryView)} />;
+}
+
+export default () => <SmartProfile />;
