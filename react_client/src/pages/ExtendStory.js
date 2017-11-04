@@ -259,5 +259,15 @@ const ExtendStoryShell = ({
   </div>
 );
 
-const ExtendStoryShellById = ({ id }) => <ExtendStoryShell />;
+class ExtendStoryShellById extends React.Component {
+  state = {};
+  componentDidMount() {
+    if (this.props.id)
+      fetchStory(this.props.id).then(storyInfo => this.setState(storyInfo));
+  }
+  render() {
+    return <ExtendStoryShell {...this.state} />;
+  }
+}
+
 export default ({ match }) => <ExtendStoryShellById id={match.params.id} />;
