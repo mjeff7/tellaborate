@@ -2,19 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProfileStoryView = ({
-  linkUrl,
+  linkUrl = '',
   title = 'Title goes here',
-  preview = '',
+  content = '',
 }) => (
   <div className="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
     <Link to={linkUrl}>
       <img
-        src="images/profile_page_story_image.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/6/64/Demarco%2C_Joseph_-_Manuscript_page.jpg"
         alt={`Story called ${title}`}
         className="img-responsive"
       />
       <h3 className="fh5co-work-title">{title}</h3>
-      <p>{preview}</p>
+      <p>{content}</p>
     </Link>
   </div>
 );
@@ -219,9 +219,11 @@ class SmartProfile extends React.Component {
   state = { stories: [] };
 
   componentDidMount() {
-    fetchStories().then(stories => this.setState({ stories }));
+    fetchStories().then(result => this.setState({ stories: result.stories }));
   }
-  render = () => <PageShell tiles={this.state.stories.map(ProfileStoryView)} />;
+  render() {
+    return <PageShell tiles={this.state.stories.map(ProfileStoryView)} />;
+  }
 }
 
 export default () => <SmartProfile />;
