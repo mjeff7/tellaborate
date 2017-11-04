@@ -62,9 +62,6 @@ const PageShell = ({ tiles }) => (
   // <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   // <link rel="shortcut icon" href="favicon.ico">
 
-  // <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-  // <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
   // <!-- Animate.css -->
   // <!-- Bootstrap  -->
   // <!-- Icomoon Icon Fonts-->
@@ -72,14 +69,24 @@ const PageShell = ({ tiles }) => (
   // <!-- Theme style  -->
 
   // <!-- Modernizr JS -->
-  // <script src="js/modernizr-2.6.2.min.js"></script>
   // <!-- FOR IE9 below -->
   // <!--[if lt IE 9]>
-  // <script src="js/respond.min.js"></script>
   // <![endif]-->
 
   // </head>
   <div>
+    <script src="js/modernizr-2.6.2.min.js" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="js/respond.min.js" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/icomoon.css" />
