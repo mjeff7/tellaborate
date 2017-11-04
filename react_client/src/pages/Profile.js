@@ -201,8 +201,15 @@ const PageShell = ({ tiles }) => (
   </div>
 );
 
+const fetchStories = () => fetch('/api/profile').json();
+
 class SmartProfile extends React.Component {
-  render = () => <PageShell tiles={stories.map(ProfileStoryView)} />;
+  state = { stories: [] };
+
+  onComponentDidMount() {
+    fetchStories().then(stories => this.setState({ stories }));
+  }
+  render = () => <PageShell tiles={this.state.stories.map(ProfileStoryView)} />;
 }
 
 export default () => <SmartProfile />;
