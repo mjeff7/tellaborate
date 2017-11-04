@@ -72,6 +72,20 @@ app.get('/api/profile', function(req, res) {
   });
 });
 
+// API STORIES PAGE
+app.get('/api/stories/:id', function(req, res){
+
+	Story.findById(req.params.id, function(err,stories) {
+		console.log(stories)
+		if(err){
+			console.log(err)
+			res.redirect('/')
+		} else {
+			res.json({stories})
+		}
+	})
+});
+
 // STORY PAGE
 app.get('/story/:id', function(req, res){
 	res.render('story');
