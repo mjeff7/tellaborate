@@ -1,16 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ProfileStoryView = () => (
+const ProfileStoryView = ({
+  linkUrl,
+  title = 'Title goes here',
+  preview = '',
+}) => (
   <div className="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
-    <a href="work.html">
+    <Link to={linkUrl}>
       <img
-        src="images/work_1.jpg"
-        alt="Free HTML5 Website Template by FreeHTML5.co"
+        src="images/profile_page_story_image.jpg"
+        alt={`Story called ${title}`}
         className="img-responsive"
       />
-      <h3 className="fh5co-work-title">Game of Thrones S8</h3>
-      <p>Decide the fate of Westeros!</p>
-    </a>
+      <h3 className="fh5co-work-title">{title}</h3>
+      <p>{preview}</p>
+    </Link>
   </div>
 );
 
