@@ -1,7 +1,10 @@
 import React from 'react';
 import { fetchStory } from '../serverApi';
 
-const ExtendStoryShell = ({ title = 'Pick a nice title to see it here' }) => (
+const ExtendStoryShell = ({
+  previousContent,
+  title = 'Pick a nice title to see it here',
+}) => (
   <div>
     <div id="fh5co-page">
       <link
@@ -113,22 +116,11 @@ const ExtendStoryShell = ({ title = 'Pick a nice title to see it here' }) => (
             >
               <h1>{title}</h1>
               <h3>Where we start:</h3>
-              <p>
-                Briefly introduce the start point/latest update of this story:{' '}
-              </p>
-              <p>
-                Example: <br />
-                Far far away, behind the word mountains, far from the countries
-                Vokalia and Consonantia, there live the blind texts. Separated
-                they live in Bookmarksgrove right at the coast of the Semantics,
-                a large language ocean. A small river named Duden flows by their
-                place and supplies it with the necessary regelialia. It is a
-                paradisematic country, in which roasted parts of sentences fly
-                into your mouth.
-              </p>
+              <p>Last time on {title}:</p>
+              <p>{previousContent}</p>
               <h3>Core rules:</h3>
               <p>
-                Let the collaboraters know the core rules for moving forward
+                Let the collaboraters know the core rules for moving forward.
               </p>
               <p>
                 Example: <br />
