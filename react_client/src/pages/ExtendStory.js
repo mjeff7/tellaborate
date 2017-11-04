@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default () => (
+const ExtendStoryShell = ({ id }) => (
   <div>
-    {' '}
     <div id="fh5co-page">
       <link
         href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700"
@@ -266,3 +265,5 @@ export default () => (
     <script src="js/main.js" />
   </div>
 );
+
+export default ({ match }) => <ExtendStoryShell id={match.params.id} />;

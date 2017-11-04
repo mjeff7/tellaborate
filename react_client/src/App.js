@@ -11,7 +11,7 @@ const App = () => (
   <BrowserRouter>
     <div>
       <Route path="/profile" component={Profile} />
-      <Route path="/extend" component={ExtendStory} />
+      <Route path="/extend/:id" component={ExtendStory} />
       <Route path="/landing" component={Landing} />
     </div>
   </BrowserRouter>
