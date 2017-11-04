@@ -83,10 +83,14 @@ const PageShell = ({ tiles }) => (
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <div id="fh5co-page">
-      <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle">
+      <a href="#" className="js-fh5co-nav-toggle fh5co-nav-toggle">
         <i />
       </a>
-      <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+      <aside
+        id="fh5co-aside"
+        role="complementary"
+        className="border js-fullheight"
+      >
         <h1 id="fh5co-logo">
           <a href="index.html">
             <img
@@ -100,7 +104,7 @@ const PageShell = ({ tiles }) => (
             <li>
               <a href="index.html">Home</a>
             </li>
-            <li class="fh5co-active">
+            <li className="fh5co-active">
               <a href="portfolio.html">Portfolio</a>
             </li>
             <li>
@@ -112,7 +116,7 @@ const PageShell = ({ tiles }) => (
           </ul>
         </nav>
 
-        <div class="fh5co-footer">
+        <div className="fh5co-footer">
           <p>
             <small>
               &copy; 2016 Nitro Free HTML5. All Rights Reserved.<span>
@@ -132,22 +136,22 @@ const PageShell = ({ tiles }) => (
           <ul>
             <li>
               <a href="#">
-                <i class="icon-facebook" />
+                <i className="icon-facebook" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="icon-twitter" />
+                <i className="icon-twitter" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="icon-instagram" />
+                <i className="icon-instagram" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="icon-linkedin" />
+                <i className="icon-linkedin" />
               </a>
             </li>
           </ul>
@@ -155,31 +159,39 @@ const PageShell = ({ tiles }) => (
       </aside>
 
       <div id="fh5co-main">
-        <div class="fh5co-narrow-content">
+        <div className="fh5co-narrow-content">
           <h2
-            class="fh5co-heading animate-box"
+            className="fh5co-heading animate-box"
             data-animate-effect="fadeInLeft"
           >
             User Profile Page
           </h2>
-          <div class="row animate-box" data-animate-effect="fadeInLeft">
+          <div className="row animate-box" data-animate-effect="fadeInLeft">
             {tiles.map(tile => [
               tile,
-              <div class="clearfix visible-sm-block" />,
+              <div className="clearfix visible-sm-block" />,
             ])}
           </div>
         </div>
 
-        <div class="fh5co-narrow-content">
-          <div class="row">
-            <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
-              <h1 class="fh5co-heading-colored">Start Your New Idea Now!</h1>
+        <div className="fh5co-narrow-content">
+          <div className="row">
+            <div
+              className="col-md-4 animate-box"
+              data-animate-effect="fadeInLeft"
+            >
+              <h1 className="fh5co-heading-colored">
+                Start Your New Idea Now!
+              </h1>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
+          <div className="row">
+            <div
+              className="col-md-4 animate-box"
+              data-animate-effect="fadeInLeft"
+            >
               <p>
-                <a href="#" class="btn btn-primary btn-outline">
+                <a href="#" className="btn btn-primary btn-outline">
                   Get Started
                 </a>
               </p>
@@ -201,12 +213,12 @@ const PageShell = ({ tiles }) => (
   </div>
 );
 
-const fetchStories = () => fetch('/api/profile').json();
+const fetchStories = () => fetch('/api/profile').then(res => res.json());
 
 class SmartProfile extends React.Component {
   state = { stories: [] };
 
-  onComponentDidMount() {
+  componentDidMount() {
     fetchStories().then(stories => this.setState({ stories }));
   }
   render = () => <PageShell tiles={this.state.stories.map(ProfileStoryView)} />;
