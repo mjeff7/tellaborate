@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { fetchStories } from '../serverApi';
 
 const extendStoryUrlFor = previousId =>
   `/extend/${typeof previousId === 'undefined' ? 'root' : previousId}`;
@@ -215,8 +216,6 @@ const PageShell = ({ tiles }) => (
     <script src="js/main.js" />
   </div>
 );
-
-const fetchStories = () => fetch('/api/profile').then(res => res.json());
 
 class SmartProfile extends React.Component {
   state = { stories: [] };
