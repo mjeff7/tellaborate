@@ -9,8 +9,12 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyparser.urlencoded({extended:true}));
 
+
+app.get('/', function(req,res){
+	res.redirect('/landing');
+});
 // LANDING PAGE
-app.get('/', function(req, res){
+app.get('/landing', function(req, res){
 	res.send("main page");
 })
 
@@ -20,18 +24,22 @@ app.get('/login', function(req, res){
 });
 
 app.post('/', function(req, res){
-	User.findById(req.body.id, function(err, foundUser){
+	User.findOne({'username': req.body.username}, function(err, foundUser){
 		if(err){
 			console.log(err);
 			res.redirect('/login');
 		}
-		if(user){
+		console.log("test",foundUser);
+		if(foundUser){
+			console.log(foundUser);
 			res.redirect('profile')
-		}
+		} else {
 		var newUser = new User();
 		newUser.username = req.body.username;
 		newUser.save();
 		res.redirect('/profile');
+		}
+
 	})
 })
 
@@ -43,6 +51,29 @@ app.get('/profile', function(req, res){
 // STORY PAGE
 app.get('/story/:id', function(req, res){
 	res.send("STORY PAGE");
+});
+
+app.post('/story', function(req, res){
+	// DO SOMETHING SAVE STORY
+	 // POST /story : Accepts JSON body with:
+  //   - id: ID of previous story (or null if this is the first story)
+  //   - content: Text string containing the story thus far.
+  //   - comment: Text string that is a comment for the story going forward.
+  // then creates a story with that info and returns JSON of the new story ID.
+})
+
+// STORY EXTENSION
+app.get('/storyExtension/:id', function(req, res){
+	res.send("STORY PAGE");
+});
+
+app.put('/accept', function(req, res){
+	// - PUT /accept: Accepts JSON body with { id: ID of story extention to accept } 
+	// then updates the universe HEAD id at the root of the story to that ID.
+})
+// API
+app.get('/api', function(req, res){
+	res.send("API page");
 });
 
 var port = 8080 || process.env.PORT;
