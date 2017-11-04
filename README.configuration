@@ -1,0 +1,20 @@
+These would eventually be configurable at build time. As a quick hack, use these:
+
+Paths:
+- Landing page: /landing
+- Login: /login
+- Extend story: /extend
+- Profile: /profile
+- API: /api
+
+API:
+URLs are relative to the API base URL above.
+- GET /user/:id : Return JSON of the full user record (nope, no security here)
+- GET /story/:id : Return JSON of full story record
+- GET /storyExtensions/:id : Return JSON array of ids of stories that extend from this one.
+- POST /story : Accepts JSON body with:
+    - id: ID of previous story (or null if this is the first story)
+    - content: Text string containing the story thus far.
+    - comment: Text string that is a comment for the story going forward.
+  then creates a story with that info and returns JSON of the new story ID.
+- PUT /accept: Accepts JSON body with { id: ID of story extention to accept } then updates the universe HEAD id at the root of the story to that ID.
