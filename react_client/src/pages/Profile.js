@@ -14,7 +14,7 @@ const ProfileStoryView = () => (
   </div>
 );
 
-export default () => (
+const PageShell = ({ tiles }) => (
   // <head>
   // <meta charset="utf-8">
   // <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -296,3 +296,5 @@ export default () => (
     <script src="js/main.js" />
   </div>
 );
+
+export default () => <PageShell tiles={[]} />;
