@@ -14,12 +14,12 @@ const ExtendStoryShell = ({ id }) => (
         type="text/css"
       />
 
-      <link rel="stylesheet" href="css/animate.css" />
-      <link rel="stylesheet" href="css/bootstrap.css" />
-      <link rel="stylesheet" href="css/icomoon.css" />
-      <link rel="stylesheet" href="css/owl.carousel.min.css" />
-      <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="/css/animate.css" />
+      <link rel="stylesheet" href="/css/bootstrap.css" />
+      <link rel="stylesheet" href="/css/icomoon.css" />
+      <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+      <link rel="stylesheet" href="/css/style.css" />
       <script src="js/modernizr-2.6.2.min.js" />
       <script src="js/respond.min.js" />
       <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle">
