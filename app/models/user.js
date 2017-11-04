@@ -5,16 +5,8 @@ var mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
 	username: String,
-	universe: [
-		{
-			id: Number
-		}
-	],
-	contribution: [
-		{
-			id: Number
-		}
-	]
+	universe: [Number],
+	contribution: [Number]
 });
 
 module.exports = mongoose.model('User', userSchema);

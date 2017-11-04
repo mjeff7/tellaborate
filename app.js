@@ -2,7 +2,9 @@ var express	= require('express'),
 	app = express(),
 	mongoose = require('mongoose'),
 	bodyparser = require('body-parser');
-var User = require('./app/models/user.js');
+var User = require('./app/models/user.js'),
+	Story = require('./app/models/story');
+// require('./seed.js')();
 
 mongoose.connect("mongodb://localhost/hack");
 app.set('view engine', 'ejs');
@@ -45,12 +47,22 @@ app.post('/', function(req, res){
 
 // PROFILE PAGE
 app.get('/profile', function(req, res){
+	Story.find({}, function(err, story){
+		console.log(story)
+		if(err){
+			console.log("ERRORerr");
+			res.redirect('/')
+		} else {
+			console.log("story found");
+			res.render('profile', {story: story[0]});
+		}
+	})
 	res.render('profile');
 });
 
 // STORY PAGE
 app.get('/story/:id', function(req, res){
-	res.send("STORY PAGE");
+	res.render('story');
 });
 
 app.post('/story', function(req, res){
